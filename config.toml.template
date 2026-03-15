@@ -1,0 +1,23 @@
+[github]
+# Repositories to track, in "owner/repo" format.
+# At least one entry is required.
+repos = [
+    "owner/repo-a",
+    "owner/repo-b",
+]
+
+# Fall back to the GitHub REST API when the gh CLI fails or is unavailable.
+# Requires a GitHub token — set the environment variable named below.
+# Default: true
+use_api_fallback = true
+
+# Name of the environment variable holding your GitHub personal access token.
+# Used only when use_api_fallback = true.
+# Default: "GITHUB_TOKEN"
+token_env = "GITHUB_TOKEN"
+
+[ui]
+# How often to auto-refresh, in seconds.
+# Set to 0 to disable auto-refresh (manual only via `r`).
+# Default: 60
+refresh_interval_seconds = 60

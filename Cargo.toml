@@ -1,0 +1,45 @@
+[package]
+name = "pr-tracker"
+version = "0.1.0"
+edition = "2024"
+description = "Terminal UI for visualizing active GitHub pull requests"
+
+[[bin]]
+name = "pr-tracker"
+path = "src/main.rs"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# TUI
+ratatui = "0.29"
+crossterm = "0.28"
+
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# Config / serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+
+# HTTP client for GitHub API fallback
+reqwest = { version = "0.12", features = ["json", "rustls-tls", "blocking"], default-features = false }
+
+# Error handling
+anyhow = "1"
+thiserror = "1"
+
+# Logging / tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Misc utilities
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "5"
+open = "5"
+
+[dev-dependencies]
+tokio-test = "0.4"
+mockito = "1"
